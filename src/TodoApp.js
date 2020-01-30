@@ -54,6 +54,7 @@ export class TodoApp extends React.Component {
 
 
   handleSubmit(e) {
+    
     e.preventDefault();
     if (!this.state.text.length) {
       return;
@@ -64,12 +65,19 @@ export class TodoApp extends React.Component {
     if (!this.state.dueDate.length) {
       return;
     }
+
+    console.log(this.state.dueDate) 
+    
     const newItem = {
       text: this.state.text,
       priority: this.state.priority,
       dueDate: new Date(this.state.dueDate).toDateString(),
       id: Date.now()
+      
     };
+    console.log(newItem.dueDate) 
+    
+
     this.setState(prevState => ({
       items: prevState.items.concat(newItem),
       text: "",
