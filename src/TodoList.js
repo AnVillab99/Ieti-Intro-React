@@ -12,7 +12,7 @@ export class TodoList extends React.Component {
 
 render(){    
     
-        const Tdos =this.props.TodoList;
+        const Tdos =this.props.items;
         const listItems = Tdos.map((Tdo,i) =>
             <li key={"Todo-"+i}>
                 <Todo text ={Tdo.text} priority ={Tdo.priority} dueDate = {Tdo.dueDate.toString()} />
