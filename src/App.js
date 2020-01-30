@@ -1,14 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
+import { TodoList } from './Todo'
 import './App.css';
 
 function App() {
+  const todos = [{text:"Learn React", priority:5, dueDate: new Date() },
+  {text:"Learn about APIs", priority:4, dueDate: new Date(2020,1,23) },
+  {text:"write TODO App", priority:3, dueDate: new Date(2020,1,30) }];
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          &lt;h1&gt;TODO React App&lt;/h1&gt;
         </p>
         <a
           className="App-link"
@@ -19,8 +23,13 @@ function App() {
           Learn React
         </a>
       </header>
+      <TodoList todoList={todos}/>
+
     </div>
   );
 }
+
+ReactDOM.render(this.App(),document.getElementById("root"))
+
 
 export default App;
